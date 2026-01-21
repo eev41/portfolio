@@ -1,1 +1,122 @@
-/* Add you CSS here */
+/* Import font */
+@import url('https://fonts.googleapis.com/css2?family=The+Girl+Next+Door&display=swap');
+
+/* Body styles */
+body {
+  font-family: "The Girl Next Door", cursive;
+  font-weight: 400;
+  font-style: normal;
+  background-color: #fffaf3;
+  color: #000; 
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+  text-align: center;
+  padding: 60px 20px;
+  margin-bottom: 0px;
+}
+
+header h1 {
+  font-size: 3em;
+  margin: 0;
+}
+
+header p {
+  font-size: 1.2em;
+  margin: 0px 0 0 0;
+}
+
+/* Course Section Styles */
+.course {
+  max-width: 800px;
+  margin: 0 10px 40px 0;
+  padding: 10px;
+  background-color: #fffcf9;
+  border-radius: 10px;
+  border: solid black;
+}
+
+.course.left {
+  margin-left: 10px;
+  margin-right: auto;
+  padding-right: 20px;
+  padding-left: 0px;
+  text-align: right;
+}
+
+.course.right {
+  margin-left: auto;
+  margin-right: 20px;
+  padding-left: 20px;
+}
+
+.course h2 {
+  font-size: 2em;
+  margin-bottom: 5px;
+}
+
+.course h3 {
+  font-size: 1em;
+  margin-bottom: 5px;
+}
+
+/* Project Button Styles */
+.projects {
+  text-align: center;
+}
+
+.projects a {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  border: 2px solid #000;
+  border-radius: 5px;
+  padding: 5px;
+  text-decoration: none;
+  color: #000;
+  transition: background-color 0.3s;
+  overflow: hidden;
+}
+
+.projects a:hover {
+  background-color: #f1f1f1;
+}
+
+.projects img {
+  width: 150px;
+  height: 100px;
+  display: block;
+}
+
+/* Material Symbols Icons */
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 40;
+  color: #1f1f1f;
+  font-size: 100px;
+  width: 90px;
+  height: 90px;
+  display: block;
+  text-align: center;
+  line-height: 90px;
+}
+
+.material-symbols-outlined::before {
+  content: "door_front";
+}
+
+.material-symbols-outlined:hover::before {
+  content: "door_open";
+  font-variation-settings:
+  'FILL' 0.01;
+}
