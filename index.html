@@ -1,38 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Isla Shih's Portfolio</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
 </head>
+
 <body>
   <!-- Header -->
   <header>
+    <p>Isla Shih is</p>
     <h1>Learning Web Development</h1>
-    <p>projects by Isla Shih</p>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#bio">About</a>
+    <a href="#courses">Projects</a>
+    <a href="#changelog">History</a>
+    <a href="#contact">Contact</a>
+  </nav>
   </header>
 
-  <!-- Course section -->
-  <section class="course left">
-    <h2>Web Development for Everyone</h2>
-    <h3>Global Career Accelerator</h3>
-    <div class="projects">
-      <a href="index.html"><span class="material-symbols-outlined" aria-label="Project 1"></span> Project 1</a>
-      <a href="index.html"><span class="material-symbols-outlined" aria-label="Project 2"></span> Project 2</a>
-      <a href="index.html"><span class="material-symbols-outlined" aria-label="Project 3"></span> Project 3</a>
+  <!-- Divider -->
+  <hr>
+
+  <!-- Bio -->
+
+  <section id="bio">
+    <h1>The Idea</h1>
+    <p>As a student of web development, I'm collecting my projects here in one neat place so I can look at the big picture when I need guidance for the projects to come after. Having this page will allow me to track my changing philosophies and approaches through projects I complete for various academic courses, where external requirements will exercise new methods while I try to find my style as a designer for the web. With this page, I can also share those projects with the whole wide world. So, if you're not me, hello there and enjoy!</p>
+  </section>
+
+  <!-- Divider -->
+  <hr>
+
+  <!-- Courses -->
+   <section id="courses">
+    <h1>The Projects</h1>
+    <!-- Course -->
+    <section class="course left">
+      <h2><span class="pretitle">projects from</span> Web Development for Everyone</h2>
+      <h3>with the Global Career Accelerator</h3>
+      <div class="projects">
+        <a href="index.html" id="WDE1">Portfolio Page</a>
+        <a class="disabled">More to Come!</a>
+      </div>
+      <p class="desc">In <strong>Web Development for Everyone</strong>, I've started coding basic HTML and CSS. I've also been practicing AI development skills using GitHub Copilot.</p>
+    </section>
+
+    <!-- Course -->
+    <section class="course right">
+      <h2><span class="pretitle">projects from</span> Internet Software Development</h2>
+      <h3>at Texas State University</h3>
+      <div class="projects">
+        <a class="disabled">Coming Soon!</a>
+      </div>
+      <p class="desc">In <strong>Internet Software Development</strong>, I will learn MERN full-stack development (MongoDB, Express, React, Node).</p>
+    </section>
+  </section>
+
+  <!-- Divider -->
+  <hr>
+
+  <!-- Changelog -->
+  <section id="changelog">
+    <h1>History</h1>
+
+    <h2>2026</h2>
+    <div class="log-entry left">
+      <h3>26 January</h3>
+      <p>Deployed initial version of <a href="#WDE1">Portfolio Page</a>.</p>
+    </div>
+
+    <div class="log-entry right">
+      <h3>Check Back Later</h3>
+      <p>Email me if you want to know what I'm working on. Let's talk!</p>
     </div>
   </section>
 
-  <!-- Course section -->
-  <section class="course right">
-    <h2>Internet Software Development</h2>
-    <h3>Texas State University</h3>
-    <div class="projects">
-      <a href="index.html"><span class="material-symbols-outlined" aria-label="Project 4"></span> Project 4</a>
-      <a href="index.html"><span class="material-symbols-outlined" aria-label="Project 5"></span> Project 5</a>
-      <a href="index.html"><span class="material-symbols-outlined" aria-label="Project 6"></span> Project 6</a>
-    </div>
-  </section>
+  <!-- Divider -->
+  <hr>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <a href="mailto:eev41@txstate.edu" class="email-link">eev41@txstate.edu</a>
+  </footer>
 </body>
 </html>
