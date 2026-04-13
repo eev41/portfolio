@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello, World War 3!</title>
+    <style>
+      #root {
+        /* border: solid 1px black; */
+      }
+      body {
+        text-align: center;
+      }
+      header {
+        /* background-color: pink; */
+        border: solid 2px black;
+        margin: 5px;
+      }
+      section {
+        border: solid 2px black;
+        width: 50%;
+        display: block;
+        justify-content: center;
+        align-items: center;
+        margin: 5px;
+      }
+      section button {
+        margin-top: 20px;
+      }
+      main {
+        display: flex;
+        text-align: center;
+        flex-wrap: nowrap;
+        gap: 10px;
+        justify-content: center;
+        align-items: middle;
+      }
+      footer {
+        border: solid 2px black;
+        margin: 5px;
+      }
+      button {
+        padding: 5px;;
+      }
+    </style>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      const { useState } = React;   //import { useState } from 'react';
+      
+      function App() { return <>
+        <header>
+          <Header/>
+        </header>
+        <main>
+          <section id="left">
+            <CButton/>
+          </section>
+          <section id="right">
+            <FButton/>
+          </section>
+        </main>
+        <footer>
+          <CClock/>
+        </footer>
+      </>;}
+
+      function Header() { return <>
+        <h1>Hello, World War 3!</h1>
+      </>;}
+
+      function FButton() {
+        const [count, setCount] = React.useState(0);
+        function handleClick() {setCount(count + 1);}
+        return (<>
+          <button onClick={handleClick}>
+            Drop a Function Bomb
+          </button>
+          <h1>{count} Bombs Dropped</h1> 
+        </>);
+      }
+
+      class CButton extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = { count: 0 };
+        }
+        render() { return (<>
+          <button onClick={() => this.setState({count: this.state.count+1})} >
+            Drop a Class Bomb
+          </button>
+          <h1>{this.state.count} Bombs Dropped</h1> 
+          </>);
+        }
+      }
+
+      //############################################################################
+      //##                                                                        ##
+      //##  A REACT component -- updating clock                                   ##
+      //##  Implemented as a Class Component                                      ##
+      //##                                                                        ##
+      //##  'this' is a reference to the actual object/instance of the component  ##
+      //##  this.state should encapsulate anything not constant                   ##
+      //##  this.setState(stateobject) updates(merges)current state, rerenders    ##
+      //##  Date is a Javascript class encapsulating the date and time            ##
+      //##                                                                        ##
+      //############################################################################
+
+      class CClock extends React.Component {
+
+        constructor(props) {
+          super(props);                     //always chain to your superclass's constructor
+          this.state = {date: new Date()};  //state is an object with one property 
+        }
+
+        // lifecycle event, runs once after component is loaded
+        //
+        // setInterval is a JavaScript function to establish a timer
+        //
+        // timerHandle = setInterval( popHandler, interval); 
+        //    popHandler = function to call when the timer expires 
+        //    interval   = timer interval in milliseconds
+        //    returns a handle to the timer, needed for later reference
+
+        componentDidMount() {
+          this.timerID = setInterval( () => this.tick(), 1000 ); 
+        }
+
+        // lifecycle event, runs when component is going away (like a destructor)
+        //
+        // clearInterval(timerHandle)    cancels the timer   
+
+        componentWillUnmount() {
+          clearInterval(this.timerID);
+        }
+
+        // our handler for the timer pop event.  Update the date
+        // (within the state property, via setState) to the time 
+
+        tick() {
+          this.setState({ date: new Date()}); 
+        }
+
+        // the render method returns what the cmoponent actually displays, i.e.
+        // what gets inserted into the dom/html document
+        // must be a single element (nesting is ok), wrap (if necessary)
+        // with <div>, <span>, or even <>
+
+        render() {
+          return (<div><h2>Midnight Approaches...<br/>{this.state.date.toLocaleTimeString([], {year: "numeric", hour: "2-digit", minute: "2-digit", second: "2-digit",  hour12: false, numberingSystem: "fullwide"})}</h2>
+            </div>);
+        } 
+      }
+    </script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+      <script type="text/babel">
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App/>);
+      </script>
+  </body>
+</html>

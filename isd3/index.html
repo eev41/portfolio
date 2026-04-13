@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <Title>Form Response</Title>
+   </head>
+   <body>
+      <form id="enlistForm">
+         <label for="firstName">
+            First Name:
+            <input 
+               type="text"
+               id="firstName"
+               name="first name"
+               placeholder="First Name"
+               required
+            />
+         </label>
+         <br><br>
+         <label for="middleName">
+            Middle Name:
+            <input 
+               type="text"
+               id="middleName"
+               name="middle name"
+               placeholder="Middle Name"
+            >
+         </label>
+         <br><br>
+         <label for="lastName">
+            Last Name:
+            <input 
+               type="text"
+               id="lastName"
+               name="last name"
+               placeholder="Last Name"
+               required
+            />
+         </label>
+         <br><br>
+         <input type="submit" id="submissionButton" value="Let's play!">
+         <span id="message">No player yet :(</span>
+      </form>
+      <br>Confirmation Code: <span id="code">Your JSON Will Appear Here.</span>
+      <script src="script.js"></script>
+   </body>
+</html>
